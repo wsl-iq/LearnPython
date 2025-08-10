@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>المتغيرات - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>المتغيرات في Python</h1>
+    <nav>
+        <a href="print_input.html">السابق: الطباعة والإدخال</a> |
+        <a href="datatypes.html">التالي: أنواع البيانات</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+
+    <h2>ما هي المتغيرات؟</h2>
+    <p>
+        <strong>المتغير</strong> هو اسم يُستخدم لتخزين قيمة معينة في الذاكرة، ويمكن تغيير هذه القيمة لاحقاً أثناء تنفيذ البرنامج.
+        المتغيرات تساعدك على إعادة استخدام القيم وتسهيل كتابة الكود.
+    </p>
+
+    <h2>كيفية إنشاء المتغيرات وتعيين القيم</h2>
+    <p>
+        لإنشاء متغير في Python، فقط اكتب اسم المتغير ثم علامة <code>=</code> ثم القيمة التي تريد تخزينها.
+        لا تحتاج لتعريف نوع المتغير مسبقاً، فبايثون تحدد النوع تلقائياً.
+    </p>
+    <pre><code class="language-python">x = 10           # عدد صحيح
+name = "محمد"    # نص (سلسلة محارف)
+is_active = True # قيمة منطقية (صح أو خطأ)
+pi = 3.14        # عدد عشري
+</code></pre>
+
+    <h2>تغيير قيمة المتغير</h2>
+    <p>
+        يمكنك تغيير قيمة المتغير في أي وقت:
+    </p>
+    <pre><code class="language-python">x = 5
+x = 20  # الآن x تساوي 20 وليس 5
+</code></pre>
+
+    <h2>تسمية المتغيرات (الاسماء الصالحة)</h2>
+    <ul>
+        <li>يجب أن يبدأ اسم المتغير بحرف أو <code>_</code> (ولا يبدأ برقم).</li>
+        <li>يمكن أن يحتوي على أرقام أو أحرف أو <code>_</code> فقط.</li>
+        <li>لا يسمح بالمسافات أو الرموز الخاصة مثل <code>!</code> أو <code>@</code>.</li>
+        <li>حساس لحالة الأحرف: <code>age</code> و <code>Age</code> متغيران مختلفان.</li>
+        <li>يفضل أن يكون الاسم معبراً عن محتوى المتغير.</li>
+    </ul>
+    <pre><code class="language-python">_counter = 1
+userName = "Ali"
+age2 = 25
+# أمثلة غير صحيحة:
+# 2age = 10
+# user-name = "Sara"
+</code></pre>
+
+    <h2>طباعة المتغيرات</h2>
+    <p>
+        استخدم دالة <code>print()</code> لعرض قيمة المتغير:
+    </p>
+    <pre><code class="language-python">print(x)
+print(name)
+print(is_active)
+</code></pre>
+
+    <h2>تعيين عدة متغيرات في سطر واحد</h2>
+    <pre><code class="language-python">a, b, c = 1, 2, 3
+print(a, b, c)  # الناتج: 1 2 3
+</code></pre>
+
+    <h2>إسناد نفس القيمة لعدة متغيرات</h2>
+    <pre><code class="language-python">x = y = z = 0
+print(x, y, z)  # الناتج: 0 0 0
+</code></pre>
+
+    <h2>نوع المتغير (type)</h2>
+    <p>
+        يمكنك معرفة نوع المتغير باستخدام الدالة <code>type()</code>:
+    </p>
+    <pre><code class="language-python">print(type(x))      # <class 'int'>
+print(type(name))   # <class 'str'>
+print(type(is_active)) # <class 'bool'>
+</code></pre>
+
+    <h2>ملاحظات هامة</h2>
+    <ul>
+        <li>لا تستخدم الكلمات المحجوزة في بايثون كأسماء متغيرات (مثل <code>if</code>، <code>for</code>، <code>class</code>).</li>
+        <li>يفضل كتابة أسماء المتغيرات باللغة الإنجليزية، لكن بايثون تدعم العربية أيضاً.</li>
+        <li>استخدم أسماء واضحة وسهلة الفهم.</li>
+    </ul>
+
+    <p>بعد تعلم المتغيرات، انتقل إلى درس <a href="datatypes.html">أنواع البيانات</a>.</p>
+</div>
+<footer>
+    &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 12px 0;
+        background: #f1f1f1;
+        border-top: 1px solid #eee;
+        margin-top: 20px;
+    }
+</style>
+</body>
+</html>

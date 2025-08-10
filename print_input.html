@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>الطباعة والإدخال - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>الطباعة والإدخال في Python</h1>
+    <nav>
+        <a href="index.html">الرئيسية</a> |
+        <a href="variables.html">التالي: المتغيرات</a>
+    </nav>
+
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+    <h2>الطباعة باستخدام print()</h2>
+    <p>الدالة <code>print()</code> تستخدم لعرض النصوص أو النتائج على الشاشة.</p>
+    <pre><code class="language-python">print("مرحبا بك في عالم Python!")</code></pre>
+
+    <h2>الإدخال باستخدام input()</h2>
+    <p>الدالة <code>input()</code> تستخدم لأخذ مدخلات من المستخدم.</p>
+    <pre><code class="language-python">name = input("أدخل اسمك: ")
+print("أهلاً", name)</code></pre>
+
+    <h2>شرح تفصيلي لدوال النصوص (Strings) في بايثون</h2>
+    <p>
+        النصوص (Strings) في بايثون توفر العديد من الدوال المفيدة لمعالجة وتعديل النصوص. فيما يلي شرح لأهم الدوال مع أمثلة ونتائجها:
+    </p>
+    <pre><code class="language-python"># تعريف نص مع مسافات في البداية والنهاية
+text = "  Hello Python 3  "
+
+print("original:", repr(text))  # عرض النص الأصلي مع علامات الاقتباس
+print("1. upper():", text.upper())  # تحويل كل الأحرف إلى أحرف كبيرة
+print("2. lower():", text.lower())  # تحويل كل الأحرف إلى أحرف صغيرة
+print("3. capitalize():", text.capitalize())  # أول حرف كبير والباقي صغير
+print("4. title():", text.title())  # أول حرف من كل كلمة كبير
+print("5. swapcase():", text.swapcase())  # عكس حالة الأحرف
+print("6. strip():", text.strip())  # إزالة المسافات من البداية والنهاية
+print("7. lstrip():", text.lstrip())  # إزالة المسافات من اليسار فقط
+print("8. rstrip():", text.rstrip())  # إزالة المسافات من اليمين فقط
+print("9. replace('Python', 'World'):", text.replace("Python", "World"))  # استبدال كلمة بكلمة أخرى
+print("10. count('l'):", text.count('l'))  # عدد مرات ظهور الحرف l
+print("11. find('Python'):", text.find('Python'))  # إيجاد موقع كلمة Python
+print("12. rfind('o'):", text.rfind('o'))  # إيجاد آخر موقع لحرف o
+print("13. startswith('  He'):", text.startswith('  He'))  # هل يبدأ النص بـ '  He'
+print("14. endswith('3  '):", text.endswith('3  '))  # هل ينتهي النص بـ '3  '
+print("15. isalpha():", text.isalpha())  # هل كل النص أحرف فقط
+print("16. isdigit():", text.isdigit())  # هل كل النص أرقام فقط
+print("17. isalnum():", text.isalnum())  # هل النص أحرف أو أرقام فقط
+print("18. isspace():", text.isspace())  # هل النص مسافات فقط
+print("19. split():", text.split())  # تقسيم النص إلى قائمة كلمات
+print("20. join(['a', 'b', 'c']):", "-".join(['a', 'b', 'c']))  # دمج قائمة نصوص بفاصل -
+print("21. zfill(20):", text.zfill(20))  # إضافة أصفار من اليسار حتى يصل الطول إلى 20
+print("22. center(30):", text.center(30, '*'))  # توسيط النص داخل 30 خانة مع ملء الفراغ بـ *
+print("23. encode():", text.encode())  # تحويل النص إلى بايتات
+print("24. casefold():", text.casefold())  # تحويل النص إلى أحرف صغيرة بشكل قوي</code></pre>
+
+    <h3>نتائج التنفيذ:</h3>
+    <pre><code class="language-text">original: '  Hello Python 3  '
+1. upper():   HELLO PYTHON 3  
+2. lower():   hello python 3  
+3. capitalize():   hello python 3  
+4. title():   Hello Python 3  
+5. swapcase():   hELLO pYTHON 3  
+6. strip(): Hello Python 3
+7. lstrip(): Hello Python 3  
+8. rstrip():   Hello Python 3
+9. replace('Python', 'World'):   Hello World 3  
+10. count('l'): 2
+11. find('Python'): 8
+12. rfind('o'): 12
+13. startswith('  He'): True
+14. endswith('3  '): True
+15. isalpha(): False
+16. isdigit(): False
+17. isalnum(): False
+18. isspace(): False
+19. split(): ['Hello', 'Python', '3']
+20. join(['a', 'b', 'c']): a-b-c
+21. zfill(20): 000  Hello Python 3  
+22. center(30): ****  Hello Python 3  ****
+23. encode(): b'  Hello Python 3  '
+24. casefold():   hello python 3 
+</code></pre>
+
+    <p>
+        <strong>ملاحظات:</strong>
+        <ul>
+            <li>كل دالة لها استخدام خاص لمعالجة النصوص.</li>
+            <li>يمكنك تجربة هذه الدوال على أي نص آخر.</li>
+            <li>الدوال التي تبدأ بـ is ترجع True أو False حسب محتوى النص.</li>
+        </ul>
+    </p>
+
+    <p>بعد ما تتعلم التعامل مع النصوص، يمكنك الانتقال إلى درس <a href="variables.html">المتغيرات</a>.</p>
+</div>
+<footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>الدوال - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>الدوال في Python</h1>
+    <nav>
+        <a href="loops.html">السابق: حلقات التكرار</a> |
+        <a href="oop.html">التالي: البرمجة الكائنية</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+    <h2>ما هي الدوال؟</h2>
+    <p>
+        الدالة هي كتلة من الكود تُستخدم لتنفيذ مهمة معينة ويمكن إعادة استخدامها عدة مرات. تساعد الدوال في تنظيم الكود وتقسيمه إلى أجزاء صغيرة وسهلة الفهم والصيانة.
+    </p>
+
+    <h2>تعريف الدالة باستخدام <code>def</code></h2>
+    <p>
+        يمكنك تعريف دالة جديدة باستخدام الكلمة المفتاحية <code>def</code>، ثم اسم الدالة، ثم الأقواس التي تحتوي على المعاملات (إن وجدت)، ثم نقطتين رأسيتين. الكود الذي ينتمي للدالة يكون بمسافة بادئة (indentation).
+    </p>
+    <pre><code class="language-python">def greet(name):
+        print("مرحباً، " + name)
+
+greet("محمد")  # ستطبع: مرحباً، محمد
+    </code></pre>
+    <ul>
+        <li><strong>greet</strong>: اسم الدالة.</li>
+        <li><strong>name</strong>: معامل (parameter) يُمرر للدالة.</li>
+        <li>يمكنك استدعاء الدالة وتمرير قيمة للمعامل.</li>
+    </ul>
+
+    <h2>القيم الراجعة (Return Values)</h2>
+    <p>
+        يمكن للدالة أن تُعيد قيمة باستخدام الكلمة المفتاحية <code>return</code>. عند استخدام <code>return</code>، تنتهي الدالة وتُعيد القيمة المحددة.
+    </p>
+    <pre><code class="language-python">def add(a, b):
+        return a + b
+
+result = add(5, 3)
+print(result)  # ستطبع: 8
+    </code></pre>
+    <ul>
+        <li>الدالة <code>add</code> تأخذ معاملين وتُعيد ناتج جمعهما.</li>
+        <li>يمكنك تخزين القيمة الراجعة في متغير واستخدامها لاحقاً.</li>
+    </ul>
+
+    <h2>المعاملات الافتراضية (Default Parameters)</h2>
+    <p>
+        يمكنك إعطاء قيمة افتراضية للمعاملات، بحيث إذا لم يُمرر المستخدم قيمة، تُستخدم القيمة الافتراضية.
+    </p>
+    <pre><code class="language-python">def greet(name="ضيف"):
+        print("مرحباً، " + name)
+
+greet()         # ستطبع: مرحباً، ضيف
+greet("سارة")   # ستطبع: مرحباً، سارة
+    </code></pre>
+
+    <h2>دوال بعدد غير محدد من المعاملات</h2>
+    <p>
+        أحياناً تحتاج أن تقبل الدالة عدداً غير محدد من القيم. استخدم <code>*args</code> للمعاملات غير المسماة، و<code>**kwargs</code> للمعاملات المسماة.
+    </p>
+    <pre><code class="language-python">def print_numbers(*args):
+        for num in args:
+                print(num)
+
+print_numbers(1, 2, 3, 4)  # ستطبع الأرقام واحداً تلو الآخر
+    </code></pre>
+
+    <h2>القيم الراجعة المتعددة</h2>
+    <p>
+        يمكن للدالة أن تُعيد أكثر من قيمة باستخدام الفواصل، وتُعاد كـ <code>tuple</code>.
+    </p>
+    <pre><code class="language-python">def get_name_and_age():
+        return "أحمد", 25
+
+name, age = get_name_and_age()
+print(name)  # أحمد
+print(age)   # 25
+    </code></pre>
+
+    <h2>ملاحظات هامة</h2>
+    <ul>
+        <li>الدوال تساعد في تقليل التكرار وتحسين تنظيم الكود.</li>
+        <li>يمكنك استدعاء الدالة في أي مكان بعد تعريفها.</li>
+        <li>استخدم أسماء دوال ومعاملات معبرة عن وظيفتها.</li>
+    </ul>
+
+    <p>بعد ما تتعلم الدوال، ابدأ درس <a href="oop.html">البرمجة الكائنية</a>.</p>
+</div>
+<footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>

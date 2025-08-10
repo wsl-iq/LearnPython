@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>البرمجة الكائنية - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>البرمجة الكائنية (OOP) في Python</h1>
+    <nav>
+        <a href="functions.html">السابق: الدوال</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+    <h2>ما هي البرمجة الكائنية (OOP)؟</h2>
+    <p>
+        البرمجة الكائنية (Object Oriented Programming) هي أسلوب برمجي يعتمد على تقسيم البرنامج إلى كائنات (Objects)، كل كائن يمثل جزءاً من البرنامج وله خصائص (Attributes) ودوال (Methods) خاصة به. هذا الأسلوب يسهل تنظيم الكود وإعادة استخدامه.
+    </p>
+
+    <h2>تعريف الكلاس (Class) وإنشاء كائن (Object)</h2>
+    <p>
+        الكلاس هو قالب يُستخدم لإنشاء كائنات. الكائن هو نسخة حية من الكلاس.
+    </p>
+    <pre><code class="language-python">class Person:
+        def __init__(self, name, age):
+                self.name = name      # خاصية الاسم
+                self.age = age        # خاصية العمر
+
+        def greet(self):
+                print(f"مرحباً، اسمي {self.name} وعمري {self.age} سنة")
+
+# إنشاء كائن من الكلاس
+person1 = Person("محمد", 30)
+person1.greet()  # استدعاء دالة التحية
+</code></pre>
+
+    <h3>شرح الكود:</h3>
+    <ul>
+        <li><code>class Person:</code> تعريف كلاس باسم Person.</li>
+        <li><code>__init__</code>: دالة الباني (constructor) تُنفذ تلقائياً عند إنشاء كائن جديد.</li>
+        <li><code>self</code>: تشير للكائن الحالي.</li>
+        <li><code>greet</code>: دالة (method) داخل الكلاس.</li>
+        <li><code>person1 = Person("محمد", 30)</code>: إنشاء كائن جديد.</li>
+        <li><code>person1.greet()</code>: استدعاء دالة من الكائن.</li>
+    </ul>
+
+    <h2>الوراثة (Inheritance)</h2>
+    <p>
+        الوراثة تسمح بإنشاء كلاس جديد يرث خصائص ودوال كلاس آخر.
+    </p>
+    <pre><code class="language-python">class Student(Person):  # Student يرث من Person
+        def __init__(self, name, age, student_id):
+                super().__init__(name, age)  # استدعاء باني الكلاس الأب
+                self.student_id = student_id
+
+        def show_id(self):
+                print(f"رقم الطالب: {self.student_id}")
+
+student1 = Student("علي", 22, "S123")
+student1.greet()
+student1.show_id()
+</code></pre>
+    <ul>
+        <li><code>super()</code>: تُستخدم لاستدعاء دوال الكلاس الأب.</li>
+        <li>الكلاس Student يرث من Person ويضيف خاصية جديدة.</li>
+    </ul>
+
+    <h2>الأنواع المختلفة من الدوال داخل الكلاس</h2>
+    <pre><code class="language-python">class Math:
+        @staticmethod
+        def add(x, y):
+                return x + y
+
+        @classmethod
+        def description(cls):
+                print(f"هذا الكلاس اسمه {cls.__name__}")
+
+print(Math.add(5, 3))         # 8
+Math.description()            # هذا الكلاس اسمه Math
+</code></pre>
+    <ul>
+        <li><code>@staticmethod</code>: دالة لا تعتمد على الكلاس أو الكائن.</li>
+        <li><code>@classmethod</code>: دالة تعتمد على الكلاس نفسه وليس الكائن.</li>
+    </ul>
+
+    <h2>مصطلحات هامة في OOP</h2>
+    <ul>
+        <li><code>class</code> : تعريف الكلاس</li>
+        <li><code>object</code> : الكائن (نسخة من الكلاس)</li>
+        <li><code>attribute</code> : خاصية للكائن</li>
+        <li><code>method</code> : دالة داخل الكلاس</li>
+        <li><code>inheritance</code> : الوراثة</li>
+        <li><code>encapsulation</code> : التغليف (إخفاء التفاصيل الداخلية)</li>
+        <li><code>polymorphism</code> : تعدد الأشكال (إمكانية استخدام نفس الدالة بطرق مختلفة)</li>
+    </ul>
+
+    <h2>مثال على التغليف (Encapsulation)</h2>
+    <pre><code class="language-python">class BankAccount:
+        def __init__(self, balance):
+                self.__balance = balance  # خاصية خاصة (private)
+
+        def deposit(self, amount):
+                self.__balance += amount
+
+        def get_balance(self):
+                return self.__balance
+
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())  # 1500
+</code></pre>
+    <ul>
+        <li><code>__balance</code>: خاصية خاصة لا يمكن الوصول لها مباشرة من خارج الكلاس.</li>
+        <li>يتم التعامل معها عبر دوال مخصصة.</li>
+    </ul>
+
+    <p>بهذا نكون قد غطينا أساسيات البرمجة الكائنية في Python بشكل مفصل مع أمثلة عملية. بالتوفيق.</p>
+</div>
+<footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>

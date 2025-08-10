@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>تعليم Python - الصفحة الرئيسية</title>
+    <!-- استيراد خط كايرو للكتابة العربية الجميلة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <!-- ملف التنسيقات الخاص بالموقع -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- مكتبة Prism لتلوين الأكواد البرمجية -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <!-- ملف الجافاسكريبت الخاص بالموقع -->
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="python-icon">
+            <i class="fa-brands fa-python"></i>
+        </span>
+        <h1>تعليم Python من الصفر</h1>
+        
+        <!-- مقدمة الموقع -->
+        <div class="intro">
+            <strong>مرحبا بكم انا محمد الباقر مطور برمجيات وسعيد بكونكم تتعلمون  لغة اساسية في كل المجالات حظا سعيدا</strong>
+            <br>
+            هذا الموقع مخصص للمبتدئين لتعلم أساسيات البرمجة باستخدام لغة <b>Python</b> بطريقة مبسطة وعملية، مع أمثلة وشروحات باللغة العربية.
+        </div>
+        
+        <!-- أهداف الموقع -->
+        <div class="objectives">
+            <strong>أهداف الموقع:</strong>
+            <ul>
+                <li>تعلم أساسيات البرمجة بلغة بايثون خطوة بخطوة.</li>
+                <li>توضيح المفاهيم البرمجية بأمثلة عملية.</li>
+                <li>توفير تمارين وتحديات لتثبيت المعلومات.</li>
+                <li>تسهيل الفهم للمبتدئين بدون خبرة سابقة.</li>
+            </ul>
+        </div>
+        
+        <!-- قائمة الدروس -->
+        <nav>
+            <a href="print_input.html"><i class="fa-solid fa-print"></i> الطباعة والإدخال</a>
+            <a href="variables.html"><i class="fa-solid fa-box"></i> المتغيرات</a>
+            <a href="datatypes.html"><i class="fa-solid fa-database"></i> أنواع البيانات</a>
+            <a href="conditions.html"><i class="fa-solid fa-code-branch"></i> الشروط</a>
+            <a href="operators.html"><i class="fa-solid fa-calculator"></i> العمليات الحسابية</a>
+            <a href="loops.html"><i class="fa-solid fa-repeat"></i> حلقات التكرار</a>
+            <a href="functions.html"><i class="fa-solid fa-code"></i> الدوال</a>
+            <a href="oop.html"><i class="fa-solid fa-cubes"></i> البرمجة الكائنية</a>
+            <a href="functionsOPP.html"><i class="fa-solid fa-exclamation-triangle"></i> دوال OOP</a>
+            <a href="keyword.html"><i class="fa-solid fa-key"></i> الكلمات المحجوزة</a>
+        </nav>
+        
+        <!-- مثال برمجي بسيط -->
+        <div class="sample-code">
+            <strong>مثال برمجي بسيط:</strong>
+            <pre><code class="language-python">print("مرحباً بك في عالم بايثون!")</code></pre>
+        </div>
+        
+        <!-- ملاحظة مهمة -->
+        <div class="note">
+            <i class="fa-solid fa-lightbulb"></i>
+            يمكنك نسخ الأكواد وتجربتها بنفسك في أي محرر بايثون مثل <b>Repl.it</b> أو <b>Thonny</b> أو حتى في متصفحك باستخدام <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">المترجم أونلاين</a>.
+        </div>
+        
+        <p style="text-align:center; color:#888; margin-top:24px;">
+            اختر الدرس الذي تريد تعلمه من القائمة أعلاه وابدأ رحلتك البرمجية!
+        </p>
+    </div>
+    <footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>

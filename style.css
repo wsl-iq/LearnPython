@@ -1,0 +1,112 @@
+/* استيراد خطوط عربية وآلة كاتبة */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Cairo:wght@400;700&family=Tajawal:wght@400;700&family=Fira+Mono:wght@400;700&display=swap');
+
+/* خلفية الشروحات */
+.explanation {
+    background: linear-gradient(120deg, #d0e7ff 0%, #a2c7f7 100%);
+    border-radius: 14px;
+    border: 1.5px solid #b3d1ff;
+    padding: 2.2rem 1.5rem;
+    margin: 1.7rem 0;
+    box-shadow: 0 4px 16px rgba(50, 100, 200, 0.10);
+    font-family: 'Almarai', 'Cairo', 'Tajawal', 'Arial', sans-serif;
+    color: #183153;
+    direction: rtl;
+    line-height: 2.1;
+}
+
+/* كود برمجي */
+pre {
+    font-family: 'Fira Mono', 'Cascadia Code', 'Consolas', 'monospace';
+    background: #16213e;
+    color: #e0e6ed;
+    border-radius: 10px;
+    padding: 1.1em 1em;
+    overflow-x: auto;
+    font-size: 1.05em;
+    direction: ltr;
+    text-align: left;
+    border: 1px solid #334155;
+    margin: 0.7em 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+code .keyword    { color: #38bdf8; font-weight: bold; }
+code .string     { color: #fbbf24; }
+code .number     { color: #f472b6; }
+code .comment    { color: #94a3b8; font-style: italic; }
+code .function   { color: #34d399; }
+code .variable   { color: #f87171; }
+code .operator   { color: #f472b6; }
+code .builtin    { color: #a3e635; }
+@media (max-width: 600px) {
+    .explanation {
+        padding: 1rem 0.7rem;
+        font-size: 0.98em;
+    }
+    pre {
+        font-size: 0.93em;
+        padding: 0.7em 0.5em;
+    }
+    code {
+        font-size: 0.95em;
+        padding: 0.15em 0.3em;
+    }
+}* تلوين الكلمات المفتاحية */
+code .keyword { color: #38bdf8; font-weight: bold; }
+code .string  { color: #fbbf24; }
+code .number  { color: #f472b6; }
+code .comment { color: #94a3b8; font-style: italic; }
+code .function{ color: #34d399; }
+code .variable{ color: #f87171; }
+
+/* استجابة لجميع الشاشات */
+@media (max-width: 600px) {
+    .explanation {
+        padding: 1rem 0.7rem;
+        font-size: 0.98em;
+    }
+    pre, code {
+        font-size: 0.93em;
+        padding: 0.7em 0.5em;
+    }
+}
+code {
+    font-size: 0.95em;
+    padding: 0.15em 0.3em;
+}
+
+/* تصميم عنوان القسم داخل الشرح */
+.explanation-title {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 0.7em;
+    font-family: 'Cairo', 'Almarai', 'Tajawal', sans-serif;
+}
+
+.explanation-title::before {
+    content: "ℹ️";
+    font-size: 1.2em;
+    background: #e0f2fe;
+    border-radius: 50%;
+    padding: 0.2em 0.45em;
+    margin-left: 0.2em;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.08);
+}
+
+/* نص المقدمة داخل الشرح */
+.explanation-intro {
+    background: #f1f5f9;
+    border-right: 4px solid #38bdf8;
+    border-radius: 8px;
+    padding: 0.85em 1em;
+    margin-bottom: 1.1em;
+    color: #334155;
+    font-size: 1.07em;
+    font-family: 'Cairo', 'Almarai', 'Tajawal', sans-serif;
+    line-height: 2;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>شرح جميع أنواع Keywords في بايثون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="script.js" defer></script>
+    <nav>
+        <a href="functionsOPP.html">السابق: دوال OOP</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+    <style>
+        body {
+            font-family: 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        h1 {
+            color: #2d6cdf;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+        .keyword-card {
+            background: #f0f4fa;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(44,108,223,0.07);
+            padding: 18px 22px;
+            width: 260px;
+            margin-bottom: 10px;
+            transition: box-shadow 0.2s;
+        }
+        .keyword-card:hover {
+            box-shadow: 0 4px 16px rgba(44,108,223,0.13);
+        }
+        .keyword-title {
+            font-size: 1.2em;
+            color: #2d6cdf;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .keyword-desc {
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>شرح جميع أنواع الكلمات المحجوزة (Keywords) في بايثون</h1>
+        <div class="keyword-list">
+            <div class="keyword-card">
+                <div class="keyword-title">False</div>
+                <div class="keyword-desc">قيمة منطقية تعني "خطأ" أو "غير صحيح".</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">None</div>
+                <div class="keyword-desc">تعبر عن عدم وجود قيمة أو قيمة فارغة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">True</div>
+                <div class="keyword-desc">قيمة منطقية تعني "صحيح".</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">and</div>
+                <div class="keyword-desc">عامل منطقي يستخدم للربط بين شرطين (وكلاهما يجب أن يكون صحيح).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">as</div>
+                <div class="keyword-desc">تستخدم لإعطاء اسم مستعار عند الاستيراد أو في جملة with.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">assert</div>
+                <div class="keyword-desc">تستخدم لاختبار صحة شرط معين أثناء التنفيذ.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">async</div>
+                <div class="keyword-desc">تستخدم لتعريف دوال غير متزامنة (asynchronous).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">await</div>
+                <div class="keyword-desc">تستخدم داخل الدوال غير المتزامنة لانتظار نتيجة عملية غير متزامنة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">break</div>
+                <div class="keyword-desc">تستخدم للخروج الفوري من الحلقة (for أو while).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">class</div>
+                <div class="keyword-desc">تستخدم لتعريف صنف (class) جديد.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">continue</div>
+                <div class="keyword-desc">تتخطى بقية الكود في الحلقة وتنتقل للتكرار التالي.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">def</div>
+                <div class="keyword-desc">تستخدم لتعريف دالة جديدة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">del</div>
+                <div class="keyword-desc">تستخدم لحذف متغير أو عنصر من قائمة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">elif</div>
+                <div class="keyword-desc">اختصار لـ "else if" وتستخدم مع الشروط.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">else</div>
+                <div class="keyword-desc">تستخدم لتنفيذ كود في حال لم يتحقق أي شرط.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">except</div>
+                <div class="keyword-desc">تستخدم لمعالجة الاستثناءات (الأخطاء) في جملة try.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">finally</div>
+                <div class="keyword-desc">تنفذ دائماً في نهاية جملة try سواء حدث استثناء أم لا.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">for</div>
+                <div class="keyword-desc">تستخدم لإنشاء حلقة تكرار على عناصر مجموعة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">from</div>
+                <div class="keyword-desc">تستخدم مع import لاستيراد جزء معين من مكتبة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">global</div>
+                <div class="keyword-desc">تستخدم لتعريف متغير كمتغير عام (global) داخل دالة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">if</div>
+                <div class="keyword-desc">تستخدم لتنفيذ كود عند تحقق شرط معين.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">import</div>
+                <div class="keyword-desc">تستخدم لاستيراد مكتبات أو وحدات خارجية.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">in</div>
+                <div class="keyword-desc">تستخدم للتحقق من وجود عنصر داخل مجموعة أو للتكرار.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">is</div>
+                <div class="keyword-desc">تستخدم للمقارنة بين الكائنات (هل هما نفس الكائن).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">lambda</div>
+                <div class="keyword-desc">تستخدم لإنشاء دوال مجهولة (بدون اسم) قصيرة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">nonlocal</div>
+                <div class="keyword-desc">تستخدم لتعريف متغير من النطاق الخارجي للدالة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">not</div>
+                <div class="keyword-desc">عامل منطقي يعكس قيمة الشرط (ينفيه).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">or</div>
+                <div class="keyword-desc">عامل منطقي يستخدم للربط بين شرطين (يكفي أن يكون أحدهما صحيح).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">pass</div>
+                <div class="keyword-desc">تستخدم كمكان فارغ (لا تفعل شيئاً).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">raise</div>
+                <div class="keyword-desc">تستخدم لإثارة استثناء (خطأ) يدوياً.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">return</div>
+                <div class="keyword-desc">تستخدم لإرجاع قيمة من دالة.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">try</div>
+                <div class="keyword-desc">تستخدم لمحاولة تنفيذ كود قد يسبب خطأ.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">while</div>
+                <div class="keyword-desc">تستخدم لإنشاء حلقة تكرار طالما الشرط صحيح.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">with</div>
+                <div class="keyword-desc">تستخدم لإدارة الموارد (مثل الملفات) تلقائياً.</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">yield</div>
+                <div class="keyword-desc">تستخدم داخل الدوال لإنشاء مولدات (generators).</div>
+            </div>
+            <div class="keyword-card">
+                <div class="keyword-title">eval</div>
+                <div class="keyword-desc">دالة مدمجة لتنفيذ تعبير كسلسلة نصية (ليست كلمة محجوزة رسمياً).</div>                
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html></div>

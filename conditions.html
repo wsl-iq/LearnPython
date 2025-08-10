@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>الشروط - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>الشروط في Python</h1>
+    <nav>
+        <a href="datatypes.html">السابق: أنواع البيانات</a> |
+        <a href="loops.html">التالي: حلقات التكرار</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+    <!--زر النسخ-->
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+        .copy-button {
+            background: #38bdf8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+    </style>
+    <h2>مقدمة عن الشروط</h2>
+    <p>
+        الشروط (Conditionals) تُستخدم لاتخاذ قرارات في البرنامج بناءً على تحقق شرط معين. في بايثون، نستخدم <code>if</code> و <code>elif</code> و <code>else</code> لتنفيذ كود معين إذا تحقق الشرط.
+    </p>
+    <style>
+        .copy-button {
+            background: #38bdf8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .copy-button:hover {
+            background: #34b3e0;
+        }
+        .copy-button:active {
+            background: #2a8fb0;
+        }
+
+
+    </style>
+
+    <h2>الشروط باستخدام if, elif, else</h2>
+    <p>
+        المثال التالي يوضح كيفية استخدام الشروط لتصنيف العمر:
+    </p>
+    <pre><code class="language-python">age = 20
+if age &gt;= 18:
+        print("بالغ")
+elif age &gt;= 13:
+        print("مراهق")
+else:
+        print("طفل")</code></pre>
+    <ul>
+        <li><strong>if</strong>: إذا تحقق الشرط (<code>age &gt;= 18</code>) ينفذ الكود الذي بعده.</li>
+        <li><strong>elif</strong>: إذا لم يتحقق الشرط الأول، يتم اختبار هذا الشرط (<code>age &gt;= 13</code>).</li>
+        <li><strong>else</strong>: إذا لم يتحقق أي من الشروط السابقة، ينفذ الكود هنا.</li>
+    </ul>
+
+
+
+    <h2>الشروط المركبة (Combining Conditions)</h2>
+    <p>
+        يمكن دمج أكثر من شرط باستخدام <code>and</code> (و) أو <code>or</code> (أو):
+    </p>
+    
+    <pre><code class="language-python">is_active = True
+if age &gt;= 18 and is_active:
+        print("مرحباً بالبالغ النشيط")
+elif age &gt;= 18 and not is_active:
+        print("بالغ غير نشيط")
+else:
+        print("أقل من 18 سنة")</code></pre>
+    <ul>
+        <li><strong>and</strong>: يجب أن يتحقق الشرطان معاً.</li>
+        <li><strong>or</strong>: يكفي تحقق شرط واحد على الأقل.</li>
+        <li><strong>not</strong>: عكس قيمة الشرط (ينفي الشرط).</li>
+    </ul>
+
+    <h2>أمثلة إضافية على الشروط</h2>
+    <p>مثال على استخدام <code>or</code>:</p>
+    <pre><code class="language-python">temperature = 35
+if temperature &gt; 30 or temperature &lt; 0:
+        print("درجة الحرارة غير معتدلة")
+else:
+        print("درجة الحرارة معتدلة")</code></pre>
+
+    <h2>الشروط المختصرة (Ternary Operator)</h2>
+    <p>
+        يمكن كتابة شرط مختصر في سطر واحد باستخدام ما يسمى <strong>التعبير الشرطي</strong>:
+    </p>
+    <pre><code class="language-python">result = "بالغ" if age &gt;= 18 else "قاصر"
+print(result)</code></pre>
+
+    <h2>ملاحظات هامة</h2>
+    <ul>
+        <li>يجب الانتباه للمسافات البادئة (Indentation) في بايثون، فهي تحدد نطاق الشروط.</li>
+        <li>يمكن استخدام الشروط مع أنواع بيانات مختلفة (أرقام، نصوص، قوائم... إلخ).</li>
+        <li>القيم المنطقية <code>True</code> و <code>False</code> أساسية في الشروط.</li>
+    </ul>
+     
+    
+
+    <h2>تدريب</h2>
+    <p>
+        جرب كتابة شرط يحدد إذا كان الرقم موجباً أو سالباً أو صفراً.
+    </p>
+    <pre><code class="language-python">number = int(input("أدخل رقماً: "))
+if number &gt; 0:
+        print("موجب")
+elif number &lt; 0:
+        print("سالب")
+else:
+        print("صفر")</code></pre>
+
+    <p>بعد إتقان الشروط، انتقل إلى درس <a href="loops.html">حلقات التكرار</a>.</p>
+</div>
+<footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>
+

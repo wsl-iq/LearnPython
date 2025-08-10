@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>أنواع البيانات - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>أنواع البيانات في Python</h1>
+    <nav>
+        <a href="variables.html">السابق: المتغيرات</a> |
+        <a href="conditions.html">التالي: الشروط</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+    <h2>ما هي أنواع البيانات؟</h2>
+    <p>
+        أنواع البيانات هي الطريقة التي يخزن بها الكمبيوتر المعلومات. في بايثون، كل قيمة لها نوع بيانات يحدد كيف يمكن التعامل معها.
+    </p>
+
+    <h2>أنواع البيانات الأساسية في Python</h2>
+    <ul>
+        <li>
+            <strong>str</strong> (النصوص):<br>
+            تُستخدم لتخزين النصوص.<br>
+            <code class="language-python">name = "أحمد"</code>
+        </li>
+        <li>
+            <strong>int</strong> (عدد صحيح), <strong>float</strong> (عدد عشري), <strong>complex</strong> (عدد مركب):<br>
+            <code class="language-python">age = 25<br>price = 19.99<br>z = 3 + 4j</code>
+        </li>
+        <li>
+            <strong>list</strong> (قائمة), <strong>tuple</strong> (صف), <strong>range</strong> (مدى):<br>
+            <code class="language-python">colors = ["أحمر", "أخضر", "أزرق"]<br>numbers = (1, 2, 3)<br>r = range(5)</code>
+        </li>
+        <li>
+            <strong>dict</strong> (قاموس):<br>
+            <code class="language-python">person = {"name": "سارة", "age": 30}</code>
+        </li>
+        <li>
+            <strong>set</strong> (مجموعة), <strong>frozenset</strong> (مجموعة ثابتة):<br>
+            <code class="language-python">unique_numbers = {1, 2, 3}<br>frozen = frozenset([4, 5, 6])</code>
+        </li>
+        <li>
+            <strong>bool</strong> (قيمة منطقية):<br>
+            <code class="language-python">is_active = True</code>
+        </li>
+        <li>
+            <strong>bytes</strong>, <strong>bytearray</strong>, <strong>memoryview</strong> (أنواع ثنائية):<br>
+            <code class="language-python">b = b"hello"<br>ba = bytearray(5)<br>mv = memoryview(bytes(5))</code>
+        </li>
+    </ul>
+
+    <h2>شرح تفصيلي مع أمثلة</h2>
+    <ul>
+        <li>
+            <strong>النصوص (str):</strong>
+            <p>تستخدم لتمثيل النصوص. يمكن استخدام علامات اقتباس مفردة أو مزدوجة.</p>
+            <pre><code class="language-python">greeting = "مرحبا بك في بايثون!"</code></pre>
+        </li>
+        <li>
+            <strong>الأعداد (int, float, complex):</strong>
+            <p>int للأعداد الصحيحة، float للأعداد العشرية، complex للأعداد المركبة.</p>
+            <pre><code class="language-python">x = 10      # int
+y = 3.14    # float
+z = 2 + 5j  # complex</code></pre>
+        </li>
+        <li>
+            <strong>القوائم (list):</strong>
+            <p>تخزن عدة قيم ويمكن تعديلها.</p>
+            <pre><code class="language-python">fruits = ["تفاح", "موز", "برتقال"]
+fruits.append("عنب")</code></pre>
+        </li>
+        <li>
+            <strong>الصفوف (tuple):</strong>
+            <p>تشبه القوائم لكن لا يمكن تعديلها بعد إنشائها.</p>
+            <pre><code class="language-python">dimensions = (1920, 1080)</code></pre>
+        </li>
+        <li>
+            <strong>القواميس (dict):</strong>
+            <p>تخزن بيانات على شكل أزواج مفتاح وقيمة.</p>
+            <pre><code class="language-python">student = {"name": "علي", "grade": "A"}</code></pre>
+        </li>
+        <li>
+            <strong>المجموعات (set):</strong>
+            <p>تخزن عناصر غير مكررة وغير مرتبة.</p>
+            <pre><code class="language-python">unique_letters = set("python")</code></pre>
+        </li>
+        <li>
+            <strong>القيم المنطقية (bool):</strong>
+            <p>تستخدم للتعبير عن القيم المنطقية (صح أو خطأ).</p>
+            <pre><code class="language-python">is_admin = False</code></pre>
+        </li>
+        <li>
+            <strong>الأنواع الثنائية (bytes, bytearray, memoryview):</strong>
+            <p>تستخدم للتعامل مع البيانات الثنائية مثل الصور والملفات.</p>
+            <pre><code class="language-python">data = bytes([50, 100, 76])
+buffer = bytearray(data)
+view = memoryview(data)</code></pre>
+        </li>
+    </ul>
+
+    <h2>مثال عملي شامل</h2>
+    <pre><code class="language-python">name = "سارة"
+age = 22
+grades = [90, 85, 88]
+info = {"name": name, "age": age, "grades": grades}
+passed = True
+unique_grades = set(grades)
+print(info)
+print("هل نجحت؟", passed)</code></pre>
+
+    <p>بعد ما تتقن أنواع البيانات، تابع درس <a href="conditions.html">الشروط</a>.</p>
+</div>
+<footer>
+        &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+    </footer>
+    <style>
+        footer {
+            
+            text-align: center;
+            padding: 12px 0;
+            background: #f1f1f1;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>

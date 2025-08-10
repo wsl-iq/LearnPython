@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>حلقات التكرار - تعليم Python</title>
+<link href="style.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>حلقات التكرار في Python</h1>
+    <nav>
+        <a href="conditions.html">السابق: الشروط</a> |
+        <a href="functions.html">التالي: الدوال</a> |
+        <a href="index.html">الرئيسية</a>
+    </nav>
+
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f7f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #0001;
+            padding: 32px 24px;
+        }
+        .python-icon {
+            font-size: 60px;
+            color: #306998;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .intro, .objectives {
+            background: #eaf6ff;
+            border-right: 5px solid #306998;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        nav a {
+            background: #306998;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover {
+            background: #204060;
+        }
+        .sample-code {
+            margin: 18px 0;
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            border-right: 5px solid #ffe066;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+    <h2>مقدمة عن الحلقات</h2>
+    <p>
+        الحلقات تُستخدم لتكرار تنفيذ جزء من الكود عدة مرات. في بايثون يوجد نوعان رئيسيان من الحلقات: <strong>for</strong> و <strong>while</strong>.
+    </p>
+
+    <h2>حلقة for</h2>
+    <p>
+        تُستخدم حلقة <code>for</code> للتكرار على عناصر مجموعة (مثل قائمة أو سلسلة نصية) أو على مدى من الأرقام باستخدام <code>range()</code>.
+    </p>
+    <pre><code class="language-python">for i in range(5):
+        print(i)
+# الناتج:
+# 0
+# 1
+# 2
+# 3
+# 4
+</code></pre>
+    <ul>
+        <li><strong>range(5)</strong> تُنشئ تسلسل أرقام من 0 إلى 4 (غير شاملة للعدد 5).</li>
+        <li>كل دورة من الحلقة، تتغير قيمة <code>i</code> وتُنفذ الجملة داخل الحلقة.</li>
+    </ul>
+
+    <h3>التكرار على قائمة</h3>
+    <pre><code class="language-python">fruits = ["تفاح", "موز", "برتقال"]
+for fruit in fruits:
+        print(fruit)
+# الناتج:
+# تفاح
+# موز
+# برتقال
+</code></pre>
+
+    <h2>حلقة while</h2>
+    <p>
+        تُستخدم حلقة <code>while</code> عندما تريد التكرار طالما تحقق شرط معين.
+    </p>
+    <pre><code class="language-python">count = 0
+while count &lt; 5:
+        print(count)
+        count += 1
+# الناتج:
+# 0
+# 1
+# 2
+# 3
+# 4
+</code></pre>
+    <ul>
+        <li>تستمر الحلقة طالما أن <code>count &lt; 5</code> صحيح.</li>
+        <li>يجب التأكد من تغيير قيمة <code>count</code> داخل الحلقة لتجنب التكرار اللانهائي.</li>
+    </ul>
+
+    <h2>كلمات تحكم: break و continue</h2>
+    <p>
+        تُستخدم <code>break</code> للخروج من الحلقة قبل اكتمالها، و<code>continue</code> لتخطي التكرار الحالي والانتقال للتكرار التالي.
+    </p>
+    <pre><code class="language-python">for i in range(10):
+        if i == 5:
+                break  # يوقف الحلقة إذا وصلت قيمة i إلى 5
+        if i % 2 == 0:
+                continue  # يتخطى الأرقام الزوجية
+        print(i)
+# الناتج:
+# 1
+# 3
+</code></pre>
+    <ul>
+        <li>عندما تكون <code>i == 5</code>، تُنفذ <code>break</code> وتخرج من الحلقة.</li>
+        <li>عندما تكون <code>i</code> زوجية، تُنفذ <code>continue</code> وتنتقل للتكرار التالي دون تنفيذ <code>print(i)</code>.</li>
+    </ul>
+
+    <h2>الحلقة المتداخلة (Nested Loops)</h2>
+    <p>
+        يمكن وضع حلقة داخل حلقة أخرى لتكرار مزدوج.
+    </p>
+    <pre><code class="language-python">for i in range(3):
+        for j in range(2):
+                print(f"i={i}, j={j}")
+# الناتج:
+# i=0, j=0
+# i=0, j=1
+# i=1, j=0
+# i=1, j=1
+# i=2, j=0
+# i=2, j=1
+</code></pre>
+
+    <h2>ملاحظات هامة</h2>
+    <ul>
+        <li>تأكد من وجود شرط توقف في حلقات <code>while</code> لتجنب التكرار اللانهائي.</li>
+        <li>يمكن استخدام <code>else</code> مع الحلقات، وتُنفذ فقط إذا لم يتم الخروج من الحلقة بـ <code>break</code>.</li>
+    </ul>
+    <pre><code class="language-python">for i in range(3):
+        print(i)
+else:
+        print("انتهت الحلقة")
+# الناتج:
+# 0
+# 1
+# 2
+# انتهت الحلقة
+</code></pre>
+
+    <p>بعد فهم الحلقات، تابع درس <a href="functions.html">الدوال</a>.</p>
+</div>
+<footer>
+    &copy; <span class="lang" data-ar="جميع الحقوق محفوظة (c) 2025" data-en="Copyright (c) 2025">جميع الحقوق محفوظة (c) 2025</span>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 12px 0;
+        background: #f1f1f1;
+        border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+</style>
+</body>
+</html>
